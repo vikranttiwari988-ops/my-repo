@@ -1,32 +1,25 @@
 name: CI-CD Pipeline
- 
+
 on:
-
   push:
+    branches: [main]
 
-    branches: [ main ]
- 
 jobs:
-
   ci-cd:
-
     runs-on: self-hosted
- 
+
     steps:
-
       - name: Checkout Code
-
         uses: actions/checkout@v4
- 
+
       - name: Build
-
         run: echo "Build success"
- 
-      - name: Test
 
+      - name: Test
         run: echo "Tests passed"
- 
-      # Step 4: Deploy using WSL
+
       - name: Deploy (CD)
         shell: powershell
-        run: echo "deployment successful"
+        run: |
+          Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+          echo "deployment successful"
