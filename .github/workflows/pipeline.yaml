@@ -19,8 +19,5 @@ jobs:
         run: echo "Tests passed"
 
       - name: Deploy (CD)
-        shell: powershell
-        run: |
-          Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-          echo "deployment successful"
-
+        shell: cmd
+        run: echo deployment successful
