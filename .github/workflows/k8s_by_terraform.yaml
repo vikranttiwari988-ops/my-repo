@@ -21,19 +21,19 @@ jobs:
           docker push vikranttiwari988/devops:${{ github.run_number }}
  
       - name: Terraform Init
-        working-directory: terraform_pipeline/infra
+        working-directory: infra
         run: terraform init
  
       - name: Terraform Validate
-        working-directory: terraform_pipeline/infra
+        working-directory: infra
         run: terraform validate
  
       - name: Terraform Plan
-        working-directory: terraform_pipeline/infra
+        working-directory: infra
         run: terraform plan -var="image_tag=${{ github.run_number }}"
  
       - name: Terraform Apply
-        working-directory: terraform_pipeline/infra
+        working-directory: infra
         run: terraform apply -auto-approve 
  
       - name: Wait for Deployment
