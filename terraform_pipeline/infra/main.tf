@@ -25,7 +25,7 @@ resource "kubernetes_deployment" "app" {
       spec {
         container {
           name  = "devops-container"
-          image = "omprakash13890/devops:1"
+          image = "vikranttiwari988/devops:1"
 
           port {
             container_port = 3000
