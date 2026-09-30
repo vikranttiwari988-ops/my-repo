@@ -1,4 +1,4 @@
-name: Local CI-CD Pipelines
+name: Local CI-CD Pipeline
  
 on:
   push:
