@@ -34,7 +34,7 @@ jobs:
  
       - name: Terraform Apply
         working-directory: infra
-        run: terraform apply -auto-approve 
+        run: terraform apply -auto-approve -var="image_tag=${{ github.run_number }}"
  
       - name: Wait for Deployment
         run: kubectl rollout status deployment/devops-app
